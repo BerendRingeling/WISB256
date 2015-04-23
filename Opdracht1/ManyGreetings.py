@@ -1,2 +1,2 @@
-y=input('Name? ')
+y=input('What is your name? ')
 print('Hello, '+y+'!')
