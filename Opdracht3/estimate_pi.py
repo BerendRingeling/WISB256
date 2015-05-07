@@ -13,9 +13,6 @@ try:
 except IndexError:
     print('Use: estimate_pi.py N L')
     sys.exit()
-if L>1:
-    print('AssertionError: L should be smaller than 1')
-    sys.exit()
 if len(sys.argv)==4:
     zaad=sys.argv[3]
     random.seed(zaad)
@@ -34,6 +31,9 @@ print(hits,'hits in',N,'tries')
 if hits==0:
     print('Pi =','100')
 else:
-    print('Pi =',L*(2/(hits/N)))
+    if L>=1:
+        print('Pi =',2*(L-math.sqrt(L**2-1)-math.asin(1/L))/((hits/N)-1))
+    else:
+        print('Pi =',L*(2/(hits/N)))
 
 
