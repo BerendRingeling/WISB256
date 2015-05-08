@@ -1,11 +1,12 @@
 import math
+import sys
 
 count=0
-for line in open('prime.dat'):
+for line in open(sys.argv[1]):
     count=count+1
 
 a=[]
-for line in open('prime.dat'):
+for line in open(sys.argv[1]):
     a=a+[int(line)]
 
 z=[0]*count
